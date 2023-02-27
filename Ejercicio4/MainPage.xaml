@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio4.MainPage">
+
+    <StackLayout>
+
+        <Image x:Name="img"  HeightRequest="200" WidthRequest="200" BackgroundColor="Azure" 
+               Margin="20,0,20,0" HorizontalOptions="Center" Source="foto.jpg">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AddImg" NumberOfTapsRequired="1"/>
+            </Image.GestureRecognizers>
+
+        </Image>
+
+        <Label Text="Nombre" FontSize="Title" Padding="5,0,0,0"/>
+        <Entry x:Name="txtnombre" Placeholder="Ingrese Nombre" Keyboard="Text" Margin="5,0,0,0" FontSize="Small"/>
+
+        <Label Text="Descripcion" FontSize="Subtitle" Padding="5,0,0,0"/>
+        <Editor x:Name="txtdescripcion" Placeholder="ingrese una descripcion " BackgroundColor="White"
+                Margin="5,0,0,0" FontSize="Subtitle"  HeightRequest="70" TextColor="Chocolate"/>
+
+
+        <RelativeLayout HorizontalOptions="CenterAndExpand" Margin="20">
+            <Grid>
+                <Button Text="Tomar Foto" x:Name="btnTomar"  WidthRequest="150" Grid.Column="0" Clicked="AddImg" BackgroundColor="Goldenrod"/>
+                <Button Text="a SQLite" x:Name="btnAgregar" WidthRequest="150"  Grid.Column="1" Clicked="btnagregar_Clicked" BackgroundColor="Goldenrod"/>
+                <Button Text="Listar Sitios" x:Name="btnLista" WidthRequest="150" HorizontalOptions="Center" Grid.Row="1" Grid.ColumnSpan="2" Clicked="btnlistar_Clicked" BackgroundColor="Goldenrod"/>
+            </Grid>
+
+        </RelativeLayout>
+        
+
+    </StackLayout>
+
+</ContentPage>
