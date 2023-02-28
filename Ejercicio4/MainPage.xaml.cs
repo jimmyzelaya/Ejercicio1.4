@@ -57,13 +57,19 @@ namespace Ejercicio4
 
         private async void btnagregar_Clicked(object sender, EventArgs e)
         {
+
+            if (txtnombre.Text == null)
+            {
+                await DisplayAlert("AVISO", "Ingrese el Nombre del sitio", "OK");
+            }
+
             if (imageToSave == null)
             {
                 await DisplayAlert("AVISO", "Capture una imagen del sitio", "OK");
             }
-            else if (txtdescripcion.Text == null)
+            else if (txtnombre.Text == null)
             {
-                await DisplayAlert("AVISO", "Ingrese la descripcion del sitio", "OK");
+                await DisplayAlert("AVISO", "Ingrese el Nombre del sitio", "OK");
             }
             else
             {
@@ -73,6 +79,7 @@ namespace Ejercicio4
                 if (resultado != 0)
                 {
                     await DisplayAlert("Aviso", "¡Sitio ingresado con exito!", "OK");
+                    txtnombre.Text = "";
                     txtdescripcion.Text = "";
                     img.Source = "foto.jpg";
                     imageToSave = null;
